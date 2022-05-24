@@ -5,3 +5,5 @@
 Файл hexlet-check.yml отвечает за запуск этих тестов - не удаляйте этот файл, не редактируйте его и не переименовывайте репозиторий.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
+[![asciicast](https://asciinema.org/a/dMHFDDy7A66QZiMnqQcQitEh9.svg)](https://asciinema.org/a/dMHFDDy7A66QZiMnqQcQitEh9)
