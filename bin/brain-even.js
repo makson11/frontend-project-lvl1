@@ -1,14 +1,10 @@
 import readlineSync from 'readline-sync';
-
-// случайное число от min до (max+1)
-const randomInteger = (min, max) => {
-  const rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
-};
+import randomInteger from './randomFunction.js';
 
 const tellsTheRulesOfTheGme = () => {
+  console.log('Welcom to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
-  const rules = 'Answer "yes" it the number is even, otherwise answer "on"';
+  const rules = 'Answer "yes" it the number is even, otherwise answer "no"';
 
   console.log(name);
   console.log(rules);
