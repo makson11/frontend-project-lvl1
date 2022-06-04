@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import randomInteger from './randomFunction.js';
 
-const tellsTheRulesOfTheGme = () => {
+const tellsTheRulesOfTheGameEven = () => {
   console.log('Welcom to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
   const rules = 'Answer "yes" it the number is even, otherwise answer "no"';
@@ -41,4 +41,4 @@ const tellsTheRulesOfTheGme = () => {
   } while (i <= 2);
 };
 
-tellsTheRulesOfTheGme();
+tellsTheRulesOfTheGameEven();

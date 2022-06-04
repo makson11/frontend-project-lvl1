@@ -25,7 +25,7 @@ const randomExpression = (sign, num1, num2) => {
 };
 
 // Реализация игры
-const tellsTheRulesOfTheGme = () => {
+const tellsTheRulesOfTheGameCalc = () => {
   console.log('Welcom to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
   const rules = 'What is the result of the expression?';
@@ -55,4 +55,4 @@ const tellsTheRulesOfTheGme = () => {
   } while (i <= 2);
 };
 
-tellsTheRulesOfTheGme();
+tellsTheRulesOfTheGameCalc();
