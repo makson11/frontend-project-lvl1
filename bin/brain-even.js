@@ -30,6 +30,7 @@ const tellsTheRulesOfTheGameEven = () => {
         console.log('Correct!');
       } else {
         console.log(`'${answerToTheQuestion}' is wrong answer ;(. Correct answer was 'no'.Let's try again, ${name}`);
+        console.log(`Let's try again, ${name}!`);
         break;
       }
     }

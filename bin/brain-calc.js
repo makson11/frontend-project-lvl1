@@ -48,7 +48,8 @@ const tellsTheRulesOfTheGameCalc = () => {
         console.log(`Congratulations, ${name}`);
       }
     } else {
-      console.log(`'${answerToTheQuestion}' is wrong answer ;(. Correct answer was '${randomExpression(sign, num1, num2)}'. Let's try again, ${name}!`);
+      console.log(`'${answerToTheQuestion}' is wrong answer ;(. Correct answer was '${randomExpression(sign, num1, num2)}'.`);
+      console.log(`Let's try again, ${name}!`);
       break;
     }
     i += 1;

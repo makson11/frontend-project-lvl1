@@ -33,6 +33,7 @@ const tellsTheRulesOfTheGameGcd = () => {
       }
     } else {
       console.log(`'${answerToTheQuestion}' is wrong answer ;(. Correct answer was '${gcd(num1, num2)}'.`);
+      console.log(`Let's try again, ${name}!`);
       break;
     }
 
