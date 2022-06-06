@@ -1,22 +1,34 @@
 import readlineSync from 'readline-sync';
 import randomInteger from './randomFunction.js';
 
-const tellsTheRulesOfTheGameEven = () => {
+// поиск простых чисел
+const primeNumber = (num) => {
+  let flag = true;
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
+      flag = false;
+      break;
+    }
+  }
+  return flag;
+};
+
+// Реализация игры
+const tellsTheRulesOfTheGamePrime = () => {
   console.log('Welcom to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
-  const rules = 'Answer "yes" it the number is even, otherwise answer "no"';
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   console.log(name);
   console.log(rules);
 
   let i = 0;
   do {
-    const randomNumb = randomInteger(1, 100);
+    const question = randomInteger(1, 100);
 
-    console.log(`Question: ${randomNumb}`);
-
+    console.log(`Question: ${question}`);
     const answerToTheQuestion = readlineSync.question('Your answer: ');
-    if (randomNumb % 2 === 0) {
+    if (primeNumber(question)) {
       if (answerToTheQuestion === 'yes') {
         console.log('Correct!');
       } else {
@@ -25,8 +37,7 @@ const tellsTheRulesOfTheGameEven = () => {
         break;
       }
     }
-
-    if (randomNumb % 2 !== 0) {
+    if (!primeNumber(question)) {
       if (answerToTheQuestion === 'no') {
         console.log('Correct!');
       } else {
@@ -43,4 +54,4 @@ const tellsTheRulesOfTheGameEven = () => {
   } while (i <= 2);
 };
 
-tellsTheRulesOfTheGameEven();
+tellsTheRulesOfTheGamePrime();
