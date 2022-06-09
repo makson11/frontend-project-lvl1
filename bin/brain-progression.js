@@ -32,7 +32,7 @@ const getArrayTheAnswer = (arr) => {
 
 // Реализация игры
 const tellsTheRulesOfTheGameProgression = () => {
-  console.log('Welcom to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
   const rules = 'What number is missing in the progression?';
 

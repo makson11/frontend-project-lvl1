@@ -12,7 +12,7 @@ const gcd = (a, b) => {
 
 // Реализация игры
 const tellsTheRulesOfTheGameGcd = () => {
-  console.log('Welcom to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
   const rules = 'Find the greatest common divisor of given numbers.';
 

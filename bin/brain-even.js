@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 import randomInteger from './randomFunction.js';
 
 const tellsTheRulesOfTheGameEven = () => {
-  console.log('Welcom to the Brain Games!');
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?');
   const rules = 'Answer "yes" it the number is even, otherwise answer "no"';
 
@@ -38,7 +38,7 @@ const tellsTheRulesOfTheGameEven = () => {
     }
 
     if (i === 2) {
-      console.log(`Congratulations, ${name}`);
+      console.log(`Congratulations, ${name}!`);
     }
     i += 1;
   } while (i <= 2);
