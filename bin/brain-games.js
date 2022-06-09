@@ -1,3 +1,3 @@
-import getsTheUserName from '../src/cli.js';
+import { getsTheUserName } from '../src/cli.js';
 
 console.log(getsTheUserName());
