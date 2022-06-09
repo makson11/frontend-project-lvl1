@@ -30,7 +30,7 @@ const tellsTheRulesOfTheGameGcd = () => {
     if (+gcd(num1, num2) === +answerToTheQuestion) {
       console.log('Correct!');
       if (true && i === 2) {
-        console.log(`Congratulations, ${name}`);
+        console.log(`Congratulations, ${name}!`);
       }
     } else {
       console.log(`'${answerToTheQuestion}' is wrong answer ;(. Correct answer was '${gcd(num1, num2)}'.`);

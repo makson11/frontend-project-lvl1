@@ -48,7 +48,7 @@ const tellsTheRulesOfTheGameProgression = () => {
     if (+answerToTheQuestion === +question[1]) {
       console.log('Correct!');
       if (true && i === 2) {
-        console.log(`Congratulations, ${name}`);
+        console.log(`Congratulations, ${name}!`);
       }
     } else {
       console.log(`'${answerToTheQuestion}' is wrong answer ;(. Correct answer was '${question[1]}'.`);
