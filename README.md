@@ -4,7 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 Убедитесь, что у вас установлена Node.js версии 13 и выше.
-1) Установка всех нужных зависимостей и демонстрация игры четное или не четное число.
+1) Установка всех нужных зависимостей и демонстрация игры четное или не четное число. 
 [![asciicast](https://asciinema.org/a/dMHFDDy7A66QZiMnqQcQitEh9.svg)](https://asciinema.org/a/dMHFDDy7A66QZiMnqQcQitEh9)
 
 
