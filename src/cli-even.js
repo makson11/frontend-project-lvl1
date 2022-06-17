@@ -15,11 +15,11 @@ const executesLogicGameEven = () => {
 
     console.log(`Question: ${randomNumb}`);
 
-    const answerToTheQuestion = readlineSync.question('Your answer: ');
+    const yourAnswer = readlineSync.question('Your answer: ');
     const answerYes = 'yes';
     const answerNo = 'no';
 
-    if (isRound((randomNumb % 2 === 0), answerToTheQuestion, answerYes, answerNo, name) === false) {
+    if (!isRound((randomNumb % 2 === 0), yourAnswer, answerYes, answerNo, name)) {
       break;
     }
 

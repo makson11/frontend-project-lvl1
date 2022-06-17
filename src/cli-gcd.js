@@ -23,11 +23,12 @@ const executesLogicGameGcd = () => {
     const num1 = getRandomInteger(0, 100);
     const num2 = getRandomInteger(0, 100);
     const question = `${num1} ${num2}`;
+    const expr = getGcd(num1, num2);
 
     console.log(`Question: ${question}`);
-    const answerToTheQuestion = readlineSync.question('Your answer: ');
+    const yourAnswer = readlineSync.question('Your answer: ');
 
-    if (isMathRound((+getGcd(num1, num2) === +answerToTheQuestion), answerToTheQuestion, getGcd(num1, num2), name) === false) {
+    if (!isMathRound((+expr === +yourAnswer), yourAnswer, expr, name)) {
       break;
     }
 

@@ -38,11 +38,12 @@ const executesLogicGameCalc = () => {
     const num2 = getRandomInteger(1, 10);
     const sign = getRandomSign(arrayMathCharacters);
     const interpreter = `${num1} ${sign} ${num2}`;
+    const expr = getRandomExpression(sign, num1, num2);
 
     console.log(`Question: ${interpreter}`);
-    const answerToTheQuestion = readlineSync.question('Your answer: ');
+    const yourAnswer = readlineSync.question('Your answer: ');
 
-    if (isMathRound((+getRandomExpression(sign, num1, num2) === +answerToTheQuestion), answerToTheQuestion, getRandomExpression(sign, num1, num2), name) === false) {
+    if (!isMathRound((+expr === +yourAnswer), yourAnswer, expr, name)) {
       break;
     }
 

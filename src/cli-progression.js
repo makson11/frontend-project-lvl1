@@ -43,8 +43,8 @@ const executesLogicGameProgression = () => {
     const question = getArrayTheAnswer(getRandomArray());
 
     console.log(`Question: ${question[0].trim()}`);
-    const answerToTheQuestion = readlineSync.question('Your answer: ');
-    if (isMathRound((+answerToTheQuestion === +question[1]), answerToTheQuestion, question[1], name) === false) {
+    const yourAnswer = readlineSync.question('Your answer: ');
+    if (!isMathRound((+yourAnswer === +question[1]), yourAnswer, question[1], name)) {
       break;
     }
 

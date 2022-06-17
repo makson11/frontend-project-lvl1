@@ -26,11 +26,11 @@ const executesLogicGamePrime = () => {
     const question = getRandomInteger(1, 100);
 
     console.log(`Question: ${question}`);
-    const answerToTheQuestion = readlineSync.question('Your answer: ');
+    const yourAnswer = readlineSync.question('Your answer: ');
     const answerYes = 'yes';
     const answerNo = 'no';
 
-    if (isRound(isPrimeNumber(question), answerToTheQuestion, answerYes, answerNo, name) === false) {
+    if (!isRound(isPrimeNumber(question), yourAnswer, answerYes, answerNo, name)) {
       break;
     }
 

@@ -13,6 +13,4 @@ rules:
     - error
     - ignorePackages
     - js: always
-  max-len:
-    - error
-    - code: 180
+    
