@@ -29,7 +29,7 @@ export const startGame = (getQuestionAnswer, description) => {
         break;
       }
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${expresion}. Let's try again, ${userName}`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${expresion}. Let's try again, ${userName}!`);
       break;
     }
   }
