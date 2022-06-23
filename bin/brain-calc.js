@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import executesLogicGameCalc from '../src/cli-calc.js';
+import startGame from '../src/cli-calc.js';
 
-executesLogicGameCalc();
+startGame();

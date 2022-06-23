@@ -1,11 +1,10 @@
-import readlineSync from 'readline-sync';
-import { getRandomInteger, isMathRound } from './helpers.js';
+import { getRandomInteger, startGame } from './index.js';
 
-// Массив с символами
-const arrayMathCharacters = ['+', '-', '*'];
+const rules = 'What is the result of the expression?';
 
-// Случайный символ
-const getRandomSign = (arr) => {
+const arrayMathOperators = ['+', '-', '*'];
+
+const getRandomOperators = (arr) => {
   let elem;
   for (let i = 0; i < arr.length; i += 1) {
     elem = arr[getRandomInteger(0, arr.length - 1)];
@@ -13,45 +12,23 @@ const getRandomSign = (arr) => {
   return elem;
 };
 
-// Так как ES linter ругается на функциию eval(), придумал такую фунциию
 const getRandomExpression = (sign, num1, num2) => {
   switch (sign) {
     case '+': return num1 + num2;
     case '-': return num1 - num2;
     case '*': return num1 * num2;
-    default: break;
+    default: throw new Error('Unknown state!');
   }
-  return false;
 };
 
-// Реализация игры
 const executesLogicGameCalc = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name?');
-  const rules = 'What is the result of the expression?';
+  const firstNum = getRandomInteger(1, 100);
+  const secondNum = getRandomInteger(1, 10);
+  const operator = getRandomOperators(arrayMathOperators);
+  const question = `${firstNum} ${operator} ${secondNum}`;
+  const expresion = getRandomExpression(operator, firstNum, secondNum);
 
-  console.log(`Hello, ${name}!`);
-  console.log(rules);
-  let i = 0;
-  do {
-    const num1 = getRandomInteger(1, 100);
-    const num2 = getRandomInteger(1, 10);
-    const sign = getRandomSign(arrayMathCharacters);
-    const interpreter = `${num1} ${sign} ${num2}`;
-    const expr = getRandomExpression(sign, num1, num2);
-
-    console.log(`Question: ${interpreter}`);
-    const yourAnswer = readlineSync.question('Your answer: ');
-
-    if (!isMathRound((+expr === +yourAnswer), yourAnswer, expr, name)) {
-      break;
-    }
-
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
-    i += 1;
-  } while (i <= 2);
+  return [question, expresion];
 };
 
-export default executesLogicGameCalc;
+export default () => startGame(executesLogicGameCalc, rules);

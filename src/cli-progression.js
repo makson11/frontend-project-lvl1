@@ -1,7 +1,7 @@
-import readlineSync from 'readline-sync';
-import { getRandomInteger, isMathRound } from './helpers.js';
+import { getRandomInteger, startGame } from './index.js';
 
-// Генерирую массив с наxfлом в диапозоне от 0 до 100, длиной масива от 5 до 10 и шагом от 1 до 10;
+const rules = 'What number is missing in the progression?';
+
 const getRandomArray = () => {
   const arr = [];
   const iter = getRandomInteger(1, 10);
@@ -12,8 +12,6 @@ const getRandomArray = () => {
   return arr;
 };
 
-// получаю массив формата ['2, 4, 6, .., 10', 8],
-// где Array[0] строка с вопросом, а Array[1] правильный ответ;
 const getArrayTheAnswer = (arr) => {
   const result = [''];
   const randomIndex = getRandomInteger(0, arr.length - 1);
@@ -29,30 +27,9 @@ const getArrayTheAnswer = (arr) => {
   return result;
 };
 
-// Реализация игры
 const executesLogicGameProgression = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name?');
-  const rules = 'What number is missing in the progression?';
-
-  console.log(`Hello, ${name}!`);
-  console.log(rules);
-
-  let i = 0;
-  do {
-    const question = getArrayTheAnswer(getRandomArray());
-
-    console.log(`Question: ${question[0].trim()}`);
-    const yourAnswer = readlineSync.question('Your answer: ');
-    if (!isMathRound((+yourAnswer === +question[1]), yourAnswer, question[1], name)) {
-      break;
-    }
-
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
-    i += 1;
-  } while (i <= 2);
+  const question = getArrayTheAnswer(getRandomArray());
+  return [question[0].trim(), question[1]];
 };
 
-export default executesLogicGameProgression;
+export default () => startGame(executesLogicGameProgression, rules);
