@@ -1,4 +1,4 @@
-import { getRandomInteger, startGame } from './index.js';
+import { getRandomInteger, startGame } from '../index.js';
 
 const rules = 'Answer "yes" it the number is even, otherwise answer "no"';
 const isEven = (num) => num % 2 === 0;

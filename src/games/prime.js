@@ -1,16 +1,14 @@
-import { getRandomInteger, startGame } from './index.js';
+import { getRandomInteger, startGame } from '../index.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNumber = (num) => {
-  let flag = true;
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
-      flag = false;
-      break;
+      return false;
     }
   }
-  return flag;
+  return true;
 };
 
 const executesLogicGamePrime = () => {

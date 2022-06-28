@@ -1,10 +1,10 @@
-import { getRandomInteger, startGame } from './index.js';
-// Наибольший общий делитель
-const getGcd = (a, b) => {
-  if (!b) {
-    return a;
+import { getRandomInteger, startGame } from '../index.js';
+
+const getGcd = (firstNum, secondNum) => {
+  if (!secondNum) {
+    return firstNum;
   }
-  return getGcd(b, a % b);
+  return getGcd(secondNum, firstNum % secondNum);
 };
 
 const rules = 'Find the greatest common divisor of given numbers.';
