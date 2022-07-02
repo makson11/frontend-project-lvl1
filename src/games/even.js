@@ -5,9 +5,9 @@ const isEven = (num) => num % 2 === 0;
 
 const executesLogicGameEven = () => {
   const question = getRandomInteger(1, 100);
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  const answer = isEven(question) ? 'yes' : 'no';
 
-  return [question, correctAnswer];
+  return [question, answer];
 };
 
 export default () => startGame(executesLogicGameEven, rules);

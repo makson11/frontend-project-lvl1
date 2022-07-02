@@ -15,16 +15,15 @@ export const startGame = (getQuestionAnswer, description) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
   const userName = askName();
-  const condition = 3;
-  for (let i = 1; i <= condition; i += 1) {
-    const answerQuestion = getQuestionAnswer();
-    const [question, expresion] = answerQuestion;
+  const maxRoundsCount = 2;
+  for (let i = 0; i <= maxRoundsCount; i += 1) {
+    const [question, expresion] = getQuestionAnswer();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
     if (answer === String(expresion)) {
       console.log('Correct!');
-      if (i === condition) {
+      if (i === maxRoundsCount) {
         console.log(`Congratulations, ${userName}!`);
         break;
       }

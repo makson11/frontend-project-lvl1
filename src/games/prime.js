@@ -13,9 +13,9 @@ const isPrimeNumber = (num) => {
 
 const executesLogicGamePrime = () => {
   const question = getRandomInteger(1, 100);
-  const correctAnswer = isPrimeNumber(question) ? 'yes' : 'no';
+  const answer = isPrimeNumber(question) ? 'yes' : 'no';
 
-  return [question, correctAnswer];
+  return [question, answer];
 };
 
 export default () => startGame(executesLogicGamePrime, rules);
