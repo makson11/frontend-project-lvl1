@@ -4,9 +4,7 @@ const rules = 'What is the result of the expression?';
 
 const arrayMathOperators = ['+', '-', '*'];
 
-const getRandomOperators = (arr) => arr[getRandomInteger(0, arr.length - 1)];
-
-const getMathematicalExpression = (sign, num1, num2) => {
+const getResultMathExpression = (sign, num1, num2) => {
   switch (sign) {
     case '+': return num1 + num2;
     case '-': return num1 - num2;
@@ -16,11 +14,11 @@ const getMathematicalExpression = (sign, num1, num2) => {
 };
 
 const executesLogicGameCalc = () => {
+  const operator = arrayMathOperators[getRandomInteger(0, arrayMathOperators.length - 1)];
   const firstNum = getRandomInteger(1, 100);
   const secondNum = getRandomInteger(1, 10);
-  const operator = getRandomOperators(arrayMathOperators);
   const question = `${firstNum} ${operator} ${secondNum}`;
-  const expresion = getMathematicalExpression(operator, firstNum, secondNum);
+  const expresion = getResultMathExpression(operator, firstNum, secondNum);
 
   return [question, expresion];
 };

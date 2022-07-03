@@ -2,7 +2,7 @@ import { getRandomInteger, startGame } from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
-const generatingGameLogic = () => {
+const getArrayProgressions = () => {
   const progressionArray = [];
   const step = getRandomInteger(1, 10);
   const maxProgressionLength = getRandomInteger(4, 10);
@@ -11,12 +11,18 @@ const generatingGameLogic = () => {
   for (initialValue; progressionArray.length <= maxProgressionLength; initialValue += step) {
     progressionArray.push(initialValue);
   }
-  const hiddenIndexItem = getRandomInteger(0, progressionArray.length - 1);
-  const answer = progressionArray[hiddenIndexItem];
 
-  progressionArray[hiddenIndexItem] = '..';
+  return progressionArray;
+};
 
-  const question = progressionArray.join(' ');
+const generatingGameLogic = () => {
+  const progression = getArrayProgressions();
+  const hiddenIndexItem = getRandomInteger(0, progression.length - 1);
+  const answer = progression[hiddenIndexItem];
+
+  progression[hiddenIndexItem] = '..';
+
+  const question = progression.join(' ');
 
   return [question, answer];
 };
