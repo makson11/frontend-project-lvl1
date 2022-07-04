@@ -3,8 +3,9 @@ import { getRandomInteger, startGame } from '../index.js';
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNumber = (num) => {
-  for (let i = 0; i < num; i += 1) {
-    if (num % i === 0 || num === 1) {
+  let initialValue = 1;
+  for (initialValue; initialValue < num; initialValue += 1) {
+    if (num % initialValue === 0 || num === 1) {
       return false;
     }
   }
